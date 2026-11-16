@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact Us | Digital Tools for Business</title>
+<meta name="description" content="Contact Digital Tools for Business for questions, feedback or tool requests.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav><a href="index.html">&larr; All tools</a></nav>
+<h1>Contact Us</h1>
+
+<div class="box">
+  <p>Have a question, feedback or a tool request? Send us a message and we will reply as soon as we can.</p>
+  <p>Email: <b>your-email@example.com</b></p>
+</div>
+
+<h2>Send a Message</h2>
+<label>Your name</label>
+<input id="n" type="text">
+
+<label>Subject</label>
+<select id="s">
+  <option>Question</option>
+  <option>Feedback</option>
+  <option>Tool request</option>
+  <option>Report a problem</option>
+</select>
+
+<label>Message</label>
+<textarea id="m" rows="5" style="width:100%;padding:10px;font-size:1rem;border:1px solid #ccc;border-radius:8px"></textarea>
+
+<button onclick="send()">Send Email</button>
+
+<script>
+function send(){
+  var to = 'your-email@example.com';
+  var subject = encodeURIComponent(document.getElementById('s').value + ' - Digital Tools for Business');
+  var body = encodeURIComponent('Name: ' + document.getElementById('n').value + '\n\n' + document.getElementById('m').value);
+  window.location.href = 'mailto:' + to + '?subject=' + subject + '&body=' + body;
+}
+</script>
+
+<p style="margin-top:24px;font-size:.85rem;color:#666">&copy; Digital Tools for Business</p>
+</body>
+</html>
